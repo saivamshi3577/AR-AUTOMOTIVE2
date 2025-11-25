@@ -1,0 +1,97 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* High z-index to cover everything */
+    
+    /* GSAP Controls these properties initially */
+    opacity: 0; 
+    pointer-events: none; /* Disable interaction when closed */
+    
+    transition: opacity 0.3s; /* Fallback transition for overlay fade */
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Modal Content Box */
+.booking-modal-content {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    
+    /* GSAP Controls these properties for animation: */
+    /* opacity: 0; transform: scale(0.8); */
+}
+
+/* Close Button */
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.2s;
+}
+
+.close-button:hover {
+    color: var(--primary-color);
+}
+
+/* Modal Header and Info */
+.booking-modal-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1.8em;
+}
+
+.modal-service-name {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.modal-info {
+    margin-bottom: 25px;
+    color: #666;
+    font-size: 0.95em;
+    line-height: 1.5;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #ddd;
+}
+
+/* Booking Form Elements */
+.booking-form input,
+.booking-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.booking-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.modal-submit {
+    margin-top: 10px;
+}
