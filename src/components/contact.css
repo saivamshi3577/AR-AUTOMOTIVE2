@@ -1,0 +1,208 @@
+/* ================================================================= */
+/* CONTACT PAGE STYLES */
+/* ================================================================= */
+
+.contact-page {
+    padding: 80px 5vw 80px; 
+    background-color: #fcfcfc;
+    min-height: 80vh;
+}
+
+.contact-hero {
+    text-align: center;
+    padding: 20px 0 40px;
+    margin-bottom: 20px;
+}
+
+.contact-hero h1 {
+    font-size: 2.5em;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.contact-hero p {
+    font-size: 1em;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- Contact Container (Info + Form) --- */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+}
+
+.contact-info,
+.contact-form-wrapper {
+    flex: 1;
+    min-width: 300px; 
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+}
+
+.contact-info h2,
+.contact-form-wrapper h2 {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+/* --- Info Items (Address, Phone, Hours) --- */
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.info-item .icon {
+    /* Style for text-based icons */
+    font-size: 1.5em; /* Slightly smaller than the 1.8em used for large emojis */
+    margin-right: 15px;
+    color: var(--primary-color);
+    line-height: 1.2;
+    font-weight: bold; /* Make the simple symbols stand out */
+}
+
+.info-item p {
+    font-size: 1.05em;
+    color: #444;
+    line-height: 1.5;
+}
+
+.info-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* --- Contact Form Styling --- */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* --- Map Section --- */
+.map-section {
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.map-section h2 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 25px;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 400px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    font-size: 1.2em;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    .contact-info,
+    .contact-form-wrapper {
+        min-width: 100%;
+    }
+
+
+}
+
+
+
+
+/* ... (Existing styles for .contact-page, .contact-hero, .contact-container, .contact-info, .contact-form-wrapper) ... */
+
+/* --- Info Items (Address, Phone, Hours) --- */
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.info-item .icon {
+    /* Styles for React Icons */
+    font-size: 1.8em; /* Slightly larger for visual impact */
+    margin-right: 15px;
+    color: var(--primary-color);
+    line-height: 1; /* Ensures icon sits nicely next to text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Note: The rest of .contact-form and .info-item styles remain the same */
+
+/* --- Map Section --- */
+.map-section {
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.map-section h2 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 25px;
+}
+
+/* Updated Container for the Iframe */
+.map-embed-container {
+    width: 100%;
+    height: 400px; /* Gives the map a fixed height */
+    border-radius: 10px;
+    overflow: hidden; /* Ensures map edges follow border-radius */
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.map-embed-container iframe {
+    /* The iframe itself should fill the container */
+    width: 100%;
+    height: 100%;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    /* ... (Existing mobile styles) ... */
+    
+    .map-embed-container {
+        height: 300px; /* Slightly smaller map on mobile */
+    }
+}

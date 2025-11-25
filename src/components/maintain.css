@@ -1,0 +1,142 @@
+/* ================================================================= */
+/* 11. MAINTENANCE SERVICE PAGE STYLES */
+/* ================================================================= */
+
+.maintenance-services-page {
+    padding: 80px 5vw 80px; /* Added padding-top to clear fixed navbar */
+    background-color: #ffffff;
+}
+
+.maintenance-hero {
+    text-align: center;
+    padding: 20px 0 40px;
+    margin-bottom: 20px;
+}
+
+.maintenance-hero h1 {
+    font-size: 2.5em;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.maintenance-hero p {
+    font-size: 1em;
+    color: #666;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Category Tabs Styling */
+.maintenance-tabs-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.maintenance-tab {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #555;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.maintenance-tab:hover {
+    color: var(--primary-color);
+}
+
+.maintenance-tab.active {
+    color: var(--primary-color);
+    font-weight: 700;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+/* Service Grid Styling */
+.maintenance-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.maintenance-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    border: 1px solid #f0f0f0;
+}
+
+.maintenance-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.maintenance-image-placeholder {
+    height: 180px;
+    background: #f5f5f5;
+    /* Image styles are applied inline in JSX to the img tag */
+}
+
+.maintenance-card-content {
+    padding: 20px;
+}
+
+.maintenance-card-content .service-name {
+    font-size: 1.3em;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.service-details {
+    font-size: 0.9em;
+    color: #777;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    min-height: 40px; /* Ensure height consistency */
+}
+
+.maintenance-card .service-rate-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 15px;
+    border-top: 1px solid #eee;
+}
+
+.maintenance-card .rate-value {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+    .maintenance-tabs-container {
+        flex-direction: column;
+    }
+
+    .maintenance-tab {
+        width: 100%;
+        margin: 5px 0;
+        border-bottom: 1px solid #eee;
+        border-radius: 5px;
+    }
+    
+    .maintenance-tab.active {
+        border-bottom: 1px solid var(--primary-color);
+    }
+}

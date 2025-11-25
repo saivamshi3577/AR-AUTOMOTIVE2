@@ -1,0 +1,147 @@
+/* ================================================================= */
+/* 1. NAVIGATION & BUTTONS (UPDATED FOR ALWAYS-VISIBLE HAMBURGER) */
+/* ================================================================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5vw;
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* Container for Service Links and Hamburger */
+.nav-desktop-services {
+    /* New styling for the service links */
+    display: flex; 
+    gap: 30px;
+    align-items: center;
+    /* Allows the hamburger icon to push it slightly left */
+    margin-left: auto; 
+    margin-right: 40px; 
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1em;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* --- Hamburger Icon (Always Visible) --- */
+.nav-right-container {
+    display: flex;
+    align-items: center;
+}
+
+.hamburger-icon {
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    cursor: pointer;
+    color: var(--primary-color);
+    padding: 5px;
+    line-height: 1;
+}
+
+/* --- Mobile Menu Content (Dropdown) --- */
+.nav-mobile-menu {
+    position: absolute;
+    top: 100%; /* Position right below the navbar */
+    right: 0; /* Align to the right edge */
+    width: 100%;
+    max-width: 300px; /* Constrain the width for desktop dropdown */
+    background: var(--white);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    /* GSAP Initial State: opacity: 0, transform: translateY(-20px), display: 'none' */
+    pointer-events: none; 
+    z-index: 990;
+}
+
+.nav-mobile-menu.is-open {
+    pointer-events: auto; 
+}
+
+.nav-mobile-menu ul {
+    list-style: none;
+    padding: 20px 20px; /* Reduced padding for the dropdown */
+    margin: 0;
+}
+
+.nav-mobile-menu li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.nav-mobile-menu li:last-child {
+    border-bottom: none;
+    padding-top: 20px;
+    text-align: center; 
+}
+
+.mobile-nav-link {
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px 0;
+    transition: color 0.3s;
+}
+
+.mobile-nav-link:hover {
+    color: var(--primary-color);
+}
+
+
+/* --- Media Query for Mobile View --- */
+@media (max-width: 992px) {
+    .nav-desktop-services {
+        display: none; /* Hide service links on mobile/tablet */
+    }
+    
+    /* Full width for mobile menu on small screens */
+    .nav-mobile-menu {
+        max-width: 100%;
+        left: 0;
+    }
+
+    .navbar {
+        justify-content: space-between; 
+    }
+}

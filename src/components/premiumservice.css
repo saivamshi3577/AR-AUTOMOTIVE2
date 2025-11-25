@@ -1,0 +1,213 @@
+/* ================================================================= */
+/* 9. PREMIUM SERVICE PAGE STYLES */
+/* ================================================================= */
+
+.premium-services-page {
+    padding: 20px 5vw 80px;
+    background-color: #f7f7f7;
+}
+
+.premium-hero {
+    text-align: center;
+    padding: 60px 0 40px;
+}
+
+.premium-hero h1 {
+    font-size: 2.8em;
+    color: #000;
+    margin-bottom: 15px;
+    border-bottom: 3px solid var(--primary-color);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.premium-hero p {
+    font-size: 1.1em;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.premium-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.premium-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    border: 1px solid #eee;
+}
+
+.premium-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.premium-image-placeholder {
+    height: 200px;
+    background: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: #444;
+}
+
+.premium-card-content {
+    padding: 25px;
+}
+
+.service-name {
+    font-size: 1.5em;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.service-category {
+    font-size: 0.9em;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.service-description-preview {
+    font-size: 0.95em;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    height: 70px; /* fixed height for consistent card size */
+    overflow: hidden;
+}
+
+.service-rate-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 15px;
+    border-top: 1px solid #eee;
+}
+
+.rate-label {
+    font-weight: 500;
+    color: #444;
+}
+
+.rate-value {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #000;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .premium-hero h1 {
+        font-size: 2em;
+    }
+}
+
+
+/* ================================================================= */
+/* 10. BOOKING MODAL STYLES */
+/* ================================================================= */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* Higher than navbar */
+    opacity: 0;
+    pointer-events: none; /* Hidden by default, controlled by GSAP/state */
+    transition: opacity 0.3s;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.booking-modal-content {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    
+    /* GSAP Initial State: */
+    opacity: 0; 
+    transform: scale(0.8);
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.2s;
+}
+
+.close-button:hover {
+    color: var(--primary-color);
+}
+
+.booking-modal-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1.8em;
+}
+
+.modal-service-name {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.modal-info {
+    margin-bottom: 25px;
+    color: #666;
+    font-size: 0.95em;
+    line-height: 1.5;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.booking-form input,
+.booking-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.booking-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.modal-submit {
+    margin-top: 10px;
+}

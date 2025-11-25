@@ -1,0 +1,34 @@
+/* Hide the default cursor across the entire site */
+* {
+    cursor: none !important;
+}
+
+/* Style for the custom cursor follower */
+.custom-cursor {
+    position: fixed; /* Stays with the viewport */
+    top: 0;
+    left: 0;
+    width: 30px; /* Size of the follower circle */
+    height: 30px;
+    border: 2px solid var(--primary-color, #03101f); /* Border color using your variable */
+    border-radius: 50%; /* Make it a circle */
+    pointer-events: none; /* Crucial: ensures it doesn't block clicks */
+    z-index: 10000; /* Ensure it is always on top */
+    opacity: 1;
+    /* Use a CSS transition for smooth movement (instead of JS tracking) */
+    transition: 
+        transform 0.1s ease-out, /* Slightly faster transition for motion */
+        width 0.3s ease, 
+        height 0.3s ease, 
+        background-color 0.3s ease; 
+}
+
+/* --- Interactive States for a "Cool" Effect --- */
+
+/* State when hovering over interactive elements (buttons, links, etc.) */
+.custom-cursor.active {
+    width: 60px; /* Make it bigger */
+    height: 60px;
+    background-color: var(--primary-color, #03162b); /* Fill the circle */
+    mix-blend-mode: exclusion; /* Optional: creates a cool color inversion effect */
+}
